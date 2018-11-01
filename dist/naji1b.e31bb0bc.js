@@ -50093,7 +50093,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 document.getElementById('output').innerText = "set plot"; //document.getElementById()
 
-var n = [2];
+var input;
+input = prompt("what is your input?");
+var n = [input];
 var model = tf.sequential();
 model.add(tf.layers.dense({
   units: 1,

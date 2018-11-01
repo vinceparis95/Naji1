@@ -3,7 +3,9 @@ import * as tf from '@tensorflow/tfjs';
 
 document.getElementById('output').innerText = "set plot";
 //document.getElementById()
-var n = [2]
+var input
+input = prompt("what is your input?")
+var n = [input]
 const model = tf.sequential();
 model.add(tf.layers.dense({units: 1, inputShape: [1]}));
 model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
