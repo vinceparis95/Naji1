@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{"./../fonts/glyphicons-halflings-regular.eot":[["glyphicons-halflings-regular.2fbbc53c.eot","node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"],"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"],"./../fonts/glyphicons-halflings-regular.woff2":[["glyphicons-halflings-regular.5205a59f.woff2","node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"],"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"],"./../fonts/glyphicons-halflings-regular.woff":[["glyphicons-halflings-regular.87950c9d.woff","node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"],"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"],"./../fonts/glyphicons-halflings-regular.ttf":[["glyphicons-halflings-regular.dc52369b.ttf","node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"],"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"],"./../fonts/glyphicons-halflings-regular.svg":[["glyphicons-halflings-regular.fa9c14a4.svg","node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"],"node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"],"_css_loader":"../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -50091,11 +50091,8 @@ var tf = _interopRequireWildcard(require("@tensorflow/tfjs"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-document.getElementById('output').innerText = "set plot"; //document.getElementById()
-
-var input;
-input = prompt("what is your input?");
-var n = [input];
+var userInput = prompt("enter number");
+var n = [userInput];
 var model = tf.sequential();
 model.add(tf.layers.dense({
   units: 1,
@@ -50106,11 +50103,10 @@ model.compile({
   optimizer: 'sgd'
 });
 var input = tf.tensor2d([4, 5, 3, 4], [4, 1]);
-var ys = tf.tensor2d([40, 50, 30, 40], [4, 1]);
+var ys = tf.tensor2d([20, 25, 15, 20], [4, 1]);
 model.fit(input, ys, {
   epochs: 500
 }).then(function () {
-  // Use model to predict values
   model.predict(tf.tensor2d(n, [1, 1])).print();
 });
 },{"bootstrap/dist/css/bootstrap.css":"node_modules/bootstrap/dist/css/bootstrap.css","@tensorflow/tfjs":"node_modules/@tensorflow/tfjs/dist/tf.esm.js"}],"../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
